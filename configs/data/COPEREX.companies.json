@@ -1,0 +1,95 @@
+[{
+  "_id": {
+    "$oid": "67c398dee1ab934b4d7597dc"
+  },
+  "name": "BAC Credomatic",
+  "impactLevel": "High",
+  "trajectoryYears": 67,
+  "category": "Banking & Finance",
+  "status": true,
+  "registrationDate": {
+    "$date": "2025-03-01T23:31:42.217Z"
+  },
+  "createdAt": {
+    "$date": "2025-03-01T23:31:42.225Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T23:31:42.225Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c3992fe1ab934b4d7597df"
+  },
+  "name": "Cervecería Centro Americana",
+  "impactLevel": "High",
+  "trajectoryYears": 136,
+  "category": "Beverage Industry",
+  "status": true,
+  "registrationDate": {
+    "$date": "2025-03-01T23:33:03.159Z"
+  },
+  "createdAt": {
+    "$date": "2025-03-01T23:33:03.163Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T23:33:03.163Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c39934e1ab934b4d7597e2"
+  },
+  "name": "Pollo Campero",
+  "impactLevel": "High",
+  "trajectoryYears": 52,
+  "category": "Food & Restaurant",
+  "status": true,
+  "registrationDate": {
+    "$date": "2025-03-01T23:33:08.959Z"
+  },
+  "createdAt": {
+    "$date": "2025-03-01T23:33:08.960Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T23:33:08.960Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c3993fe1ab934b4d7597e5"
+  },
+  "name": "Tigo Guatemala",
+  "impactLevel": "High",
+  "trajectoryYears": 35,
+  "category": "Telecommunications",
+  "status": true,
+  "registrationDate": {
+    "$date": "2025-03-01T23:33:19.453Z"
+  },
+  "createdAt": {
+    "$date": "2025-03-01T23:33:19.454Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-01T23:33:19.454Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c39948e1ab934b4d7597e8"
+  },
+  "name": "Claro Guatemala",
+  "impactLevel": "High",
+  "trajectoryYears": 28,
+  "category": "Telecommunications",
+  "status": true,
+  "registrationDate": {
+    "$date": "2025-03-01T23:33:28.989Z"
+  },
+  "createdAt": {
+    "$date": "2025-03-01T23:33:28.990Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-02T00:00:25.651Z"
+  }
+}]

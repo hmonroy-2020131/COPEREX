@@ -8,6 +8,7 @@ import { dbConnection } from './mongo.js';
 import limiter from '../src/middlewares/validar-cant-peticion.js';
 import authRoutes from '../src/auth/auth.routes.js'
 import userRoutes from '../src/user/user.routes.js'
+import companyRoutes from '../src/company/company.routes.js'
 
  
 const middlewares = (app) => {
@@ -22,6 +23,7 @@ const middlewares = (app) => {
 const routes =(app) => {
     app.use("/COPEREX/v1/auth", authRoutes);
     app.use("/COPEREX/v1/users", userRoutes)
+    app.use("/COPEREX/v1/company", companyRoutes)
 }
  
  
