@@ -1,6 +1,11 @@
 import { response } from "express";
 import Company from "./company.model.js";
 import exceljs from "exceljs";
+import fs from "fs";
+import path from "path";
+import { exec } from "child_process";
+
+
 
 export const getCompanies = async (req, res = response) => {
     try {
@@ -115,6 +120,14 @@ export const generateCompaniesReport = async (req, res = response) => {
             });
         }
 
+        const reportsDir = path.join(process.cwd(), "reports");
+        if (!fs.existsSync(reportsDir)) {
+            fs.mkdirSync(reportsDir, { recursive: true });
+        }
+
+        const fileName = "Companies_Report.xlsx"; 
+        const filePath = path.join(reportsDir, fileName);
+
         const workbook = new exceljs.Workbook();
         const worksheet = workbook.addWorksheet("Companies Report");
 
@@ -124,20 +137,39 @@ export const generateCompaniesReport = async (req, res = response) => {
             { header: "Impact Level", key: "impactLevel", width: 15 },
             { header: "Trajectory Years", key: "trajectoryYears", width: 20 },
             { header: "Category", key: "category", width: 20 },
-            { header: "Registration Date", key: "registrationDate", width: 25 },
+            { header: "Registration Date", key: "createdAt", width: 25 },
         ];
 
         companies.forEach((company) => {
-            worksheet.addRow(company.toObject());
+            worksheet.addRow({
+                _id: company._id.toString(),
+                name: company.name,
+                impactLevel: company.impactLevel,
+                trajectoryYears: company.trajectoryYears,
+                category: company.category,
+                createdAt: company.createdAt.toISOString(),
+            });
         });
 
-        const fileName = "Companies_Report.xlsx";
+        await workbook.xlsx.writeFile(filePath); 
 
-        res.setHeader("Content-Type", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
-        res.setHeader("Content-Disposition", `attachment; filename=${fileName}`);
+        setTimeout(() => {
+            if (process.platform === "win32") {
+                exec(`start "" "${filePath}"`); 
+            }
+        }, 2000);
 
-        const buffer = await workbook.xlsx.writeBuffer();
-        res.send(Buffer.from(buffer));
+        res.download(filePath, fileName, (err) => {
+            if (err) {
+                console.error("Error sending the file ❌", err);
+                return res.status(500).json({
+                    success: false,
+                    msg: "Error sending the file ❌",
+                    error: err,
+                });
+            }
+        });
+
     } catch (error) {
         console.error("Error generating report ❌", error);
         res.status(500).json({
@@ -147,3 +179,4 @@ export const generateCompaniesReport = async (req, res = response) => {
         });
     }
 };
+

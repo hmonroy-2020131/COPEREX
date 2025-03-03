@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "b9fe51ad-3c3d-4c3f-8e80-f3a1258e37d6",
+		"_postman_id": "4a6f213a-5e95-4228-8deb-764769249259",
 		"name": "Login/register",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "42630298"
+		"_exporter_id": "42619741"
 	},
 	"item": [
 		{
@@ -21,14 +21,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/ProyectoFinal/v1/auth/register",
+					"raw": "http://localhost:3001/COPEREX/v1/auth/register",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"ProyectoFinal",
+						"COPEREX",
 						"v1",
 						"auth",
 						"register"
@@ -52,14 +52,14 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:3001/ProyectoFinal/v1/auth/login",
+					"raw": "http://localhost:3001/COPEREX/v1/auth/login",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3001",
 					"path": [
-						"ProyectoFinal",
+						"COPEREX",
 						"v1",
 						"auth",
 						"login"
